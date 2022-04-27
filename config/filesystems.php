@@ -55,10 +55,10 @@ return [
 
         'ftp' => [
             'driver' => 'ftp',
-            'host' => env('FTP_HOST'),
-            'username' => env('FTP_USERNAME'),
-            'password' => env('FTP_PASSWORD'),
-            'root' => '/' // for example: /public_html/images
+            'host' => config('app.ftp.FTP_HOST'),
+            'username' => config('app.ftp.FTP_USERNAME'),
+            'password' => config('app.ftp.FTP_PASSWORD'),
+            'root' => config('app.ftp.FTP_ROOT') // for example: /public_html/images
         ],
 
     ],

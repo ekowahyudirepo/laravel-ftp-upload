@@ -2,6 +2,15 @@
 
 return [
 
+
+    'ftp' => [
+        'FTP_URL'     => 'https://lbbdarululum.000webhostapp.com',
+        'FTP_HOST'     => 'ftp.tossiainkediri.site',
+        'FTP_USERNAME' => 'admin@tossiainkediri.site',
+        'FTP_PASSWORD' => 'admin@tossiainkediri.site',
+        'FTP_ROOT' => '/',
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Application Name

@@ -31,9 +31,10 @@ class ImageController extends Controller
             //Upload File to external server
             Storage::disk('ftp')->put($filenametostore, fopen($request->file('profile_image'), 'r+'));
 
+            return $filenametostore;
             //Store $filenametostore in the database
         }
 
-        return redirect('image')->with('success', "Image uploaded successfully.");
+        // return redirect('image')->with('success', "Image uploaded successfully.");
     }
 }
