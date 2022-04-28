@@ -4,11 +4,11 @@ return [
 
 
     'ftp' => [
-        'FTP_URL'     => 'https://lbbdarululum.000webhostapp.com',
+        'FTP_URL'     => 'https://tossiainkediri.site',
         'FTP_HOST'     => 'ftp.tossiainkediri.site',
         'FTP_USERNAME' => 'admin@tossiainkediri.site',
         'FTP_PASSWORD' => 'admin@tossiainkediri.site',
-        'FTP_ROOT' => '/',
+        'FTP_ROOT' => '/magang/',
     ],
 
     /*
@@ -170,6 +170,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        'Tymon\JWTAuth\Providers\LaravelServiceProvider',
 
         /*
          * Package Service Providers...
@@ -238,6 +239,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
+        'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
 
     ],
 

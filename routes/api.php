@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\ImageController;
 use Illuminate\Http\Request;
@@ -20,10 +21,18 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/image/upload', [ImageController::class, 'store']);
+Route::post('login', [AuthController::class, 'login']);
 
-Route::get('/data', [DataController::class, 'index']);
-Route::post('/data/insert', [DataController::class, 'insert']);
-Route::get('/data/{id}/edit', [DataController::class, 'edit']);
-Route::post('/data/update', [DataController::class, 'update']);
-Route::post('/data/delete', [DataController::class, 'delete']);
+// Route::post('/image/upload', [ImageController::class, 'store']);
+
+Route::group(
+    ['middleware' => ['jwt.verify']],
+    function () {
+        Route::get('logout', [AuthController::class, 'logout']);
+        Route::get('/data', [DataController::class, 'index']);
+        Route::post('/data/insert', [DataController::class, 'insert']);
+        Route::get('/data/{id}/edit', [DataController::class, 'edit']);
+        Route::post('/data/update', [DataController::class, 'update']);
+        Route::post('/data/delete', [DataController::class, 'delete']);
+    }
+);
